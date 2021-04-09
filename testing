@@ -4,75 +4,79 @@ local rrk = 0
 local rma = 0
 local tl = 0
 
-
-for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-
-        if v.Name == "Rokakaka" then
-            nrrk = nrrk + 1
-        elseif v.Name == "Mysterious Arrow" then
-            nrma = nrma + 1
-        elseif sredeemed == true then
-
-if v.Name == "Redeemed Rokakaka" then
+for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if v.Name == "Rokakaka" then
+        nrrk = nrrk + 1
+    elseif v.Name == "Mysterious Arrow" then
+        nrma = nrma + 1
+    elseif sredeemed == true then
+        if v.Name == "Redeemed Rokakaka" then
             rrk = rrk + 1
-elseif v.Name == "Redeemed Mysterious Arrow" then
+        elseif v.Name == "Redeemed Mysterious Arrow" then
             rma = rma + 1
         end
     end
 end
 
-
-
-
 game:GetService("StarterGui"):SetCore(
-"ChatMakeSystemMessage",
-{Text = "[ITEM COUNTER]: Calculating. . .",
-Color = Color3.fromRGB(235, 237, 88),
-TextSize = 28
-})
+    "ChatMakeSystemMessage",
+    {
+        Text = "[ITEM COUNTER]: Calculating. . .",
+        Color = Color3.fromRGB(235, 237, 88),
+        TextSize = 28
+    }
+)
 
 wait(1.4)
 
 game:GetService("StarterGui"):SetCore(
-"ChatMakeSystemMessage",
-{Text = "[ITEM COUNTER]: You have "..tostring(nrma).." Normal Mysterious Arrows",
-Color = Color3.fromRGB(237, 88, 88)
-})
+    "ChatMakeSystemMessage",
+    {
+        Text = "[ITEM COUNTER]: You have " .. tostring(nrma) .. " Normal Mysterious Arrows",
+        Color = Color3.fromRGB(237, 88, 88)
+    }
+)
 
 wait(.8)
 
 game:GetService("StarterGui"):SetCore(
-"ChatMakeSystemMessage",
-{Text = "[ITEM COUNTER]: You have "..tostring(nrrk).." Normal Rokas",
-Color = Color3.fromRGB(237, 88, 88)
-})
-
+    "ChatMakeSystemMessage",
+    {
+        Text = "[ITEM COUNTER]: You have " .. tostring(nrrk) .. " Normal Rokas",
+        Color = Color3.fromRGB(237, 88, 88)
+    }
+)
 
 if sredeemed == true then
     wait(1)
-    
-game:GetService("StarterGui"):SetCore(
-"ChatMakeSystemMessage",
-{Text = "[ITEM COUNTER]: ----------",
-Color = Color3.fromRGB(235, 237, 88),
-TextSize = 28
-})
-  
-  wait(.5)
-    
-game:GetService("StarterGui"):SetCore(
-"ChatMakeSystemMessage",
-{Text = "[ITEM COUNTER]: You have "..tostring(rrk).." Redeemed Rokas",
-Color = Color3.fromRGB(237, 88, 88)
-})
 
-wait(.8)
+    game:GetService("StarterGui"):SetCore(
+        "ChatMakeSystemMessage",
+        {
+            Text = "[ITEM COUNTER]: ----------",
+            Color = Color3.fromRGB(235, 237, 88),
+            TextSize = 28
+        }
+    )
 
-game:GetService("StarterGui"):SetCore(
-"ChatMakeSystemMessage",
-{Text = "[ITEM COUNTER]: You have "..tostring(rma).." Redeemed Arrows",
-Color = Color3.fromRGB(237, 88, 88)
-})
+    wait(.5)
+
+    game:GetService("StarterGui"):SetCore(
+        "ChatMakeSystemMessage",
+        {
+            Text = "[ITEM COUNTER]: You have " .. tostring(rrk) .. " Redeemed Rokas",
+            Color = Color3.fromRGB(237, 88, 88)
+        }
+    )
+
+    wait(.8)
+
+    game:GetService("StarterGui"):SetCore(
+        "ChatMakeSystemMessage",
+        {
+            Text = "[ITEM COUNTER]: You have " .. tostring(rma) .. " Redeemed Arrows",
+            Color = Color3.fromRGB(237, 88, 88)
+        }
+    )
 else
-    
 end
